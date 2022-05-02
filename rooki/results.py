@@ -88,7 +88,7 @@ class Result(object):
                 ssl._create_default_https_context = ssl._create_unverified_context
             files = metalink.download.get(self.url, self.output_dir, segmented=False)
         except Exception as e:
-            logging.error(f"Could not download files: {e}")
+            logging.exception(f"Could not download files: {e}")
             files = []
         return files
 
